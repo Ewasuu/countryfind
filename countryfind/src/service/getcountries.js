@@ -1,7 +1,7 @@
 
 
 export function getCard({filter = 'all'} = {}){
-  const url = `https://restcountries.eu/rest/v2/${filter}`
+  const url = `https://restcountries.com/v2/${filter}`
   return  fetch(url)
     .then(res => res.json())
     .then(res => {
@@ -14,7 +14,7 @@ export function getCard({filter = 'all'} = {}){
             const {nativeName} = data
             const {subregion} = data
             const {topLevelDomain} = data
-            const {code} = data.currencies[0]
+            const code = data.currencies
             const language = data.languages.map(res => res.name)
             const {borders} = data
             return {name, population, region, flag, capital, nativeName, subregion, topLevelDomain, code, language, borders}

@@ -31,7 +31,7 @@ export function CountryDetail({countries}){
                     </div>
                     <div className="card__info-container2">
                         <p className='card__info-data' ><strong className='card__info-strong' >Top Level Domain:</strong> {data.topLevelDomain}</p>
-                        <p className='card__info-data' ><strong className='card__info-strong' >Currencies:</strong> {data.code}</p>
+                        <p className='card__info-data' ><strong className='card__info-strong' >Currencies:</strong> {data.code.map(res => res.code)}</p>
                         <p className='card__info-data' ><strong className='card__info-strong' >Languages:</strong> {data.language}</p>
                     </div>
                 </div>
